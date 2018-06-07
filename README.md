@@ -3,6 +3,6 @@
 Boilerplate to start with Vue single file components with scoped css. It uses `webpack-dev-server` with hot reloading serving both static and dynamic assets.
 
 ## Installation
-`npm run install`
+`npm install`
 
 `npm run start`
