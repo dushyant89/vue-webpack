@@ -8,12 +8,12 @@ module.exports = {
     entry: {
         // since we need to load view in the entry page.
         vue: 'vue',
-        // this is where the main component is
+        // this is where the `main-content` component is
         index: resolve('src/index.js'),
     },
     output: {
         filename: '[name].js',
-        // webpack's output folder
+        // folder where the output of webpack's result go.
         path: resolve('dist'),
     },
     module: {
@@ -36,6 +36,7 @@ module.exports = {
                 },
             },
             {
+                // this is required for other javascript you are gonna wri
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: [
@@ -50,6 +51,7 @@ module.exports = {
     devServer: {
         // the url you want the webpack-dev-server to use for serving files.
         host: '0.0.0.0',
+        // can be the popular 8080 also.
         port: 8010,
         // gzip compression
         compress: true,
@@ -62,7 +64,7 @@ module.exports = {
         // The path you want webpack-dev-server to use for serving files
         publicPath: '/dist/',
         // for static assets
-        contentBase: resolve('src/'),
+        contentBase: resolve('src/assets'),
         // reload even if something changes for static assets
         watchContentBase: true,
     },
