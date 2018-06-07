@@ -1,12 +1,9 @@
 {
-  "name": "vue-vuex-demo",
+  "name": "vue-webpack",
   "version": "1.0.0",
-  "description": "Demo app for showing how to use vuex with vue and with some tests offcourse :)",
+  "description": "Demo app for showing how to bootstrap vue with webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack",
-    "watch": "webpack --watch",
     "start": "webpack-dev-server --color --progress --config config/webpack.config.js"
   },
   "keywords": [
