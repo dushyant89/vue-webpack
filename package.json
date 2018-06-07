@@ -1,0 +1,34 @@
+{
+  "name": "vue-vuex-demo",
+  "version": "1.0.0",
+  "description": "Demo app for showing how to use vuex with vue and with some tests offcourse :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --color --progress --config config/webpack.config.js"
+  },
+  "keywords": [
+    "vue",
+    "vuex"
+  ],
+  "author": "Dushyant Sabharwal",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "vue-loader": "^14.2.2",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  }
+}

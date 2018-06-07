@@ -1,0 +1,83 @@
+const path = require('path');
+const webpack = require('webpack');
+// `..` since this config file is in the config folder.
+const resolve = relativePath => path.resolve(__dirname, '..', relativePath);
+
+module.exports = {
+    mode: 'development',
+    entry: {
+        // since we need to load view in the entry page.
+        vue: 'vue',
+        // this is where the main component is
+        index: resolve('src/index.js'),
+    },
+    output: {
+        filename: '[name].js',
+        // webpack's output folder
+        path: resolve('dist'),
+    },
+    module: {
+        rules: [
+            {
+                // vue-loader config to load `.vue` files or single file components.
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        css: ['vue-style-loader', {
+                            loader: 'css-loader',
+                        }],
+                        js: [
+                            'babel-loader',
+                        ],
+                    },
+                    cacheBusting: true,
+                },
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                include: [
+                    resolve('src'),
+                    resolve('node_modules/webpack-dev-server/client'),
+                ],
+            },
+        ],
+    },
+    // There are multiple devtools available, check here https://github.com/webpack/webpack/tree/master/examples/source-map
+    devtool: 'eval',
+    devServer: {
+        // the url you want the webpack-dev-server to use for serving files.
+        host: '0.0.0.0',
+        port: 8010,
+        // gzip compression
+        compress: true,
+        // open the browser window, set to false if you are in a headless browser environment.
+        open: false,
+        watchOptions: {
+            ignored: /node_modules/,
+            poll: true,
+        },
+        // The path you want webpack-dev-server to use for serving files
+        publicPath: '/dist/',
+        // for static assets
+        contentBase: resolve('src/'),
+        // reload even if something changes for static assets
+        watchContentBase: true,
+    },
+    plugins: [
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
+    ],
+    resolve: {
+        // the compiler-included build of vue which allows to use vue templates without pre-compiling them
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js',
+        },
+        extensions: ['*', '.vue', '.js', '.json'],
+    },
+    // webpack outputs performance related stuff in the browser.
+    performance: {
+        hints: false,
+    },
+};

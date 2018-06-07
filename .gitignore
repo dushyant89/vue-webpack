@@ -1,0 +1,12 @@
+# node modules
+node_modules/*
+
+# for mac os
+.DS_Store
+
+# Intellij stuff
+.idea/*
+*.iml
+
+# Ignore package-lock.json
+package-lock.json
