@@ -24,6 +24,7 @@ module.exports = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {
+                        // https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles
                         css: ['vue-style-loader', {
                             loader: 'css-loader',
                         }],

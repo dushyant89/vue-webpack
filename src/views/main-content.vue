@@ -14,6 +14,7 @@
 <style scoped>
     .main-content {
         margin: 0 auto;
+        font-family: sans-serif;
     }
 </style>
 
