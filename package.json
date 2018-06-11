@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --color --progress --config config/webpack.config.js"
   },
   "keywords": [
-    "vue",
+    "vue"
   ],
   "author": "Dushyant Sabharwal",
   "license": "MIT",
